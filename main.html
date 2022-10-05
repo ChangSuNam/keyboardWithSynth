@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Building my own keyboard</title>
+
+    <script src="./main.js"></script>
+
+
+    <style>
+        #buttons {
+            margin: 0;
+            position: absolute;
+            left: 50%;
+            -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+        }
+
+        #mainBody{
+            /* background-color: black; */
+        }
+    </style>
+</head>
+
+
+<body id="mainBody">
+
+<div id="buttons">
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <p>Choose waveform</p>
+    <button id="sineButton"> sine</button>
+    <button id="sawtoothButton"> sawtooth</button>
+    <br>
+
+    <p>Choose audio synth</p>
+    <button id="singleButton"> single osc (default)</button>
+    <button id="additiveButton"> Additive Synthesis</button>
+    <button id="AMButton"> AM Synthesis</button>
+    <button id="FMButton"> FM Synthesis</button>
+    
+    <p>If you are lazy..</p>
+    <button id="randomButton">random combination</button>
+</div>
+<div id = "interfcae">
+    <p>Control modulator Frequency for AM/FM</p>
+	<input type="range" min=0 max=100 oninput= "updateFreq(this.value)" ></input>
+
+	<p>Control index of modulation for FM</p>
+	<input type="range" min=0 max=100 oninput="updateIndex(this.value)"></input>
+
+    <p>Enable Lfo for Additive synthesis</p>
+    <select onchange= "lfoOption(this.value);">
+        <option value=0>On</option>
+        <option value=1>Off</option>
+      
+    </select>
+</div>
+
+
+</body>
+
+
+</html>
